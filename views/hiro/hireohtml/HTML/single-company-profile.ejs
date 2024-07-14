@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<!-- Basic Page Needs
+================================================== -->
+	<title>Prolancer</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+================================================== -->
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/colors/blue.css">
+
+</head>
+
+<body>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header Container
+================================================== -->
+		<header id="header-container" class="fullwidth">
+
+			<!-- Header -->
+			<div id="header">
+				<div class="container">
+
+					<!-- Left Side Content -->
+					<div class="left-side">
+
+						<!-- Logo -->
+						<div id="logo">
+							<a href="http://localhost:3000/index-company"><img src="/images/prolancerlogo.jpeg"
+									alt=""></a>
+						</div>
+
+						<!-- Main Navigation -->
+						<nav id="navigation">
+							<ul id="responsive">
+
+								<li><a href="#" class="current">Home</a>
+									<ul class="dropdown-nav">
+										<li><a href="http://localhost:3000/index-company">Home Page</a></li>
+
+									</ul>
+								</li>
+
+								<li><a href="#">Find Companies</a>
+									<ul class="dropdown-nav">
+										<li><a href="http://localhost:3000/browse-companies">Browse Companies</a></li>
+										<li><a href="http://localhost:3000/companyprofile">Company Profile</a>
+										</li>
+									</ul>
+								</li>
+
+								<li><a href="#">For Company</a>
+									<ul class="dropdown-nav">
+										<li><a href="http://localhost:3000/freelancers-grid-layout-full-page">Find a
+												Freelancer</a>
+										</li>
+										<li><a href="http://localhost:3000/dashboard-post-a-job">Post a Job</a></li>
+										<li><a href="http://localhost:3000/dashboard-post-a-task">Post a Task</a></li>
+									</ul>
+								</li>
+
+								<li><a href="#">Dashboard</a>
+									<ul class="dropdown-nav">
+										<li><a href="http://localhost:3000/companyreviews">Reviews</a></li>
+										<li><a href="http://localhost:3000/dashboard-manage-jobs">Jobs</a>
+											<ul class="dropdown-nav">
+												<li><a href="http://localhost:3000/dashboard-manage-jobs">Manage
+														Jobs</a></li>
+												<li><a href="http://localhost:3000/dashboard-post-a-job">Post a Job</a>
+												</li>
+											</ul>
+										</li>
+										<li><a href="http://localhost:3000/dashboard-manage-tasks">Tasks</a>
+											<ul class="dropdown-nav">
+												<li><a href="http://localhost:3000/dashboard-manage-tasks">Manage
+														Tasks</a></li>
+												<li><a href="http://localhost:3000/dashboard-post-a-task">Post a
+														Task</a></li>
+											</ul>
+										</li>
+										<li><a href="http://localhost:3000/setting-company">Settings</a></li>
+									</ul>
+								</li>
+
+								<li><a href="http://localhost:3000/pages-contact">Contact us</a>
+								</li>
+
+							</ul>
+						</nav>
+						</nav>
+						<div class="clearfix"></div>
+						<!-- Main Navigation / End -->
+
+					</div>
+					<!-- Left Side Content / End -->
+
+
+					<!-- Right Side Content / End -->
+					<div class="right-side">
+
+
+						<!-- User Menu -->
+						<div class="header-widget">
+
+							<!-- Messages -->
+							<div class="header-notifications user-menu">
+								<div class="header-notifications-trigger">
+									<a href="#">
+										<div class="user-avatar status-online"><img src="<%= details[0].image %>"
+												alt=""></div>
+									</a>
+								</div>
+
+								<!-- Dropdown -->
+								<div class="header-notifications-dropdown">
+
+									<!-- User Status -->
+									<div class="user-status">
+
+										<!-- User Name / Avatar -->
+										<div class="user-details">
+											<div class="user-avatar status-online"><img src="<%= details[0].image %>"
+													alt="Company Logo"></div>
+											<div class="user-name">
+												<%= details[0].companyname%> <span>Employeer</span>
+											</div>
+										</div>
+
+										<!-- User Status Switcher -->
+										<div class="status-switch" id="snackbar-user-status">
+											<label class="user-online current-status">Online</label>
+											<label class="user-invisible">Invisible</label>
+											<!-- Status Indicator -->
+											<span class="status-indicator" aria-hidden="true"></span>
+										</div>
+									</div>
+
+									<ul class="user-menu-small-nav">
+										<li><a href="http://localhost:3000/logout/company"><i
+													class="icon-material-outline-power-settings-new"></i> Logout</a>
+										</li>
+									</ul>
+
+								</div>
+							</div>
+
+						</div>
+						<!-- User Menu / End -->
+						<!-- Mobile Navigation Button -->
+						<span class="mmenu-trigger">
+							<button class="hamburger hamburger--collapse" type="button">
+								<span class="hamburger-box">
+									<span class="hamburger-inner"></span>
+								</span>
+							</button>
+						</span>
+
+					</div>
+					<!-- Right Side Content / End -->
+
+				</div>
+			</div>
+			<!-- Header / End -->
+
+		</header>
+		<div class="clearfix"></div>
+		<!-- Header Container / End -->
+		<!-- Titlebar
+================================================== -->
+		<div class="single-page-header" data-background-image="/images/single-company.jpg">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="single-page-header-inner">
+							<div class="left-side">
+								<div class="header-image"><img src="<%= info.image %>" alt=""></div>
+								<div class="header-details">
+									<h3>
+										<%= info.companyname %> <span>
+												<%= info.companytype %>
+											</span>
+									</h3>
+									<ul>
+										<li>
+											<div class="star-rating" data-rating="4.9"></div>
+										</li>
+										<li><img class="flag" src="/images/flags/de.svg" alt="">
+											<%= info.headquarter %>
+										</li>
+										<li>
+											<div class="verified-badge-with-title">Verified</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="right-side">
+								<!-- Breadcrumbs -->
+								<nav id="breadcrumbs" class="white">
+									<ul>
+										<li><a href="http://localhost:3000/browse-companies">Browse Companies</a></li>
+										<li>
+											<%= info.companyname %>
+										</li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Page Content
+================================================== -->
+		<div class="container">
+			<div class="row">
+
+				<!-- Content -->
+				<div class="col-xl-8 col-lg-8 content-right-offset">
+
+					<div class="single-page-section">
+						<h3 class="margin-bottom-25">About Company</h3>
+						<p>
+							<%= info.intro %>
+						</p>
+
+					</div>
+
+
+				</div>
+
+				<!-- Sidebar Widget -->
+				<div class="sidebar-widget">
+					<h3>Bookmark </h3>
+
+					<!-- Bookmark Button -->
+					<button class="bookmark-button margin-bottom-25">
+						<span class="bookmark-icon"></span>
+						<span class="bookmark-text">Bookmark</span>
+						<span class="bookmarked-text">Bookmarked</span>
+					</button>
+
+
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+	</div>
+
+
+	<!-- Spacer -->
+	<div class="margin-top-15"></div>
+	<!-- Spacer / End-->
+	<!-- Footer
+================================================== -->
+	<div id="footer">
+
+		<!-- Footer Top Section -->
+		<div class="footer-top-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-12">
+
+						<!-- Footer Rows Container -->
+						<div class="footer-rows-container">
+
+							<!-- Left Side -->
+							<div class="footer-rows-left">
+								<div class="footer-row">
+									<div class="footer-row-inner footer-logo">
+										<img src="/images/prolancerlogo.jpeg" alt="">
+										<h1 style="font-size: 50px; color: blanchedalmond;">
+											<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ProLancers </strong>
+										</h1>
+									</div>
+								</div>
+							</div>
+
+							<!-- Right Side -->
+							<div class="footer-rows-right">
+
+								<!-- Social Icons -->
+								<div class="footer-row">
+									<div class="footer-row-inner">
+										<ul class="footer-social-links">
+											<li>
+												<a href="#" title="Facebook" data-tippy-placement="bottom"
+													data-tippy-theme="light">
+													<i class="icon-brand-facebook-f"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#" title="Twitter" data-tippy-placement="bottom"
+													data-tippy-theme="light">
+													<i class="icon-brand-twitter"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#" title="Google Plus" data-tippy-placement="bottom"
+													data-tippy-theme="light">
+													<i class="icon-brand-google-plus-g"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#" title="LinkedIn" data-tippy-placement="bottom"
+													data-tippy-theme="light">
+													<i class="icon-brand-linkedin-in"></i>
+												</a>
+											</li>
+										</ul>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+
+								<!-- Language Switcher -->
+								<div class="footer-row">
+									<div class="footer-row-inner">
+										<label>Language : English</label>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<!-- Footer Rows Container / End -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Footer Top Section / End -->
+
+		<!-- Footer Copyrights -->
+		<div class="footer-bottom-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-12">
+						© 2022 <strong>Prolancers</strong>. All Rights Reserved.
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Footer Copyrights / End -->
+
+	</div>
+	<!-- Footer / End -->
+
+
+
+
+	</div>
+	<!-- Wrapper / End -->
+
+
+
+	<!-- Scripts
+================================================== -->
+	<script src="/js/jquery-3.3.1.min.js"></script>
+	<script src="/js/jquery-migrate-3.0.0.min.js"></script>
+	<script src="/js/mmenu.min.js"></script>
+	<script src="/js/tippy.all.min.js"></script>
+	<script src="/js/simplebar.min.js"></script>
+	<script src="/js/bootstrap-slider.min.js"></script>
+	<script src="/js/bootstrap-select.min.js"></script>
+	<script src="/js/snackbar.js"></script>
+	<script src="/js/clipboard.min.js"></script>
+	<script src="/js/counterup.min.js"></script>
+	<script src="/js/magnific-popup.min.js"></script>
+	<script src="/js/slick.min.js"></script>
+	<script src="/js/custom.js"></script>
+
+	<!-- Snackbar // documentation: https://www.polonel.com/snackbar/ -->
+	<script>
+		// Snackbar for user status switcher
+		$('#snackbar-user-status label').click(function () {
+			Snackbar.show({
+				text: 'Your status has been changed!',
+				pos: 'bottom-center',
+				showAction: false,
+				actionText: "Dismiss",
+				duration: 3000,
+				textColor: '#fff',
+				backgroundColor: '#383838'
+			});
+		});
+
+		// Snackbar for "place a bid" button
+		$('#snackbar-place-bid').click(function () {
+			Snackbar.show({
+				text: 'Your bid has been placed!',
+			});
+		});
+
+
+		// Snackbar for copy to clipboard button
+		$('.copy-url-button').click(function () {
+			Snackbar.show({
+				text: 'Copied to clipboard!',
+			});
+		}); 
+	</script>
+
+	<!-- Google API & Maps -->
+	<!-- Geting an API Key: https://developers.google.com/maps/documentation/javascript/get-api-key -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=&libraries=places"></script>
+	<script src="js/infobox.min.js"></script>
+	<script src="js/markerclusterer.js"></script>
+	<script src="js/maps.js"></script>
+
+</body>
+
+</html>

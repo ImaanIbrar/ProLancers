@@ -1,0 +1,811 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<!-- Basic Page Needs
+================================================== -->
+	<title>Prolancer</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+================================================== -->
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/colors/blue.css">
+
+</head>
+
+<body>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header Container
+================================================== -->
+		<header id="header-container" class="fullwidth">
+
+			<!-- Header -->
+			<div id="header">
+				<div class="container">
+
+					<!-- Left Side Content -->
+					<div class="left-side">
+
+						<!-- Logo -->
+						<div id="logo">
+							<a href="http://localhost:3000/index-company"><img src="/images/prolancerlogo.jpeg"
+									alt=""></a>
+						</div>
+
+						<!-- Main Navigation -->
+						<nav id="navigation">
+							<ul id="responsive">
+
+								<li><a href="#" class="current">Home</a>
+									<ul class="dropdown-nav">
+										<li><a href="http://localhost:3000/index-company">Home Page</a></li>
+
+									</ul>
+								</li>
+
+								<li><a href="#">Find Companies</a>
+									<ul class="dropdown-nav">
+										<li><a href="http://localhost:3000/browse-companies">Browse Companies</a></li>
+										<li><a href="http://localhost:3000/companyprofile">Company Profile</a>
+										</li>
+									</ul>
+								</li>
+
+								<li><a href="#">For Company</a>
+									<ul class="dropdown-nav">
+										<li><a href="http://localhost:3000/freelancers-grid-layout-full-page">Find a
+												Freelancer</a>
+										</li>
+										<li><a href="http://localhost:3000/dashboard-post-a-job">Post a Job</a></li>
+										<li><a href="http://localhost:3000/dashboard-post-a-task">Post a Task</a></li>
+									</ul>
+								</li>
+
+								<li><a href="#">Dashboard</a>
+									<ul class="dropdown-nav">
+										<li><a href="http://localhost:3000/companyreviews">Reviews</a></li>
+										<li><a href="http://localhost:3000/dashboard-manage-jobs">Jobs</a>
+											<ul class="dropdown-nav">
+												<li><a href="http://localhost:3000/dashboard-manage-jobs">Manage
+														Jobs</a></li>
+												<li><a href="http://localhost:3000/dashboard-post-a-job">Post a Job</a>
+												</li>
+											</ul>
+										</li>
+										<li><a href="http://localhost:3000/dashboard-manage-tasks">Tasks</a>
+											<ul class="dropdown-nav">
+												<li><a href="http://localhost:3000/dashboard-manage-tasks">Manage
+														Tasks</a></li>
+												<li><a href="http://localhost:3000/dashboard-post-a-task">Post a
+														Task</a></li>
+											</ul>
+										</li>
+										<li><a href="http://localhost:3000/setting-company">Settings</a></li>
+									</ul>
+								</li>
+
+								<li><a href="http://localhost:3000/pages-contact">Contact us</a>
+								</li>
+
+							</ul>
+						</nav>
+						</nav>
+						<div class="clearfix"></div>
+						<!-- Main Navigation / End -->
+
+					</div>
+					<!-- Left Side Content / End -->
+
+
+					<!-- Right Side Content / End -->
+					<div class="right-side">
+
+
+						<!-- User Menu -->
+						<div class="header-widget">
+
+							<!-- Messages -->
+							<div class="header-notifications user-menu">
+								<div class="header-notifications-trigger">
+									<a href="#">
+										<div class="user-avatar status-online"><img src="<%= details[0].image %>"
+												alt=""></div>
+									</a>
+								</div>
+
+								<!-- Dropdown -->
+								<div class="header-notifications-dropdown">
+
+									<!-- User Status -->
+									<div class="user-status">
+
+										<!-- User Name / Avatar -->
+										<div class="user-details">
+											<div class="user-avatar status-online"><img src="<%= details[0].image %>"
+													alt="Company Logo"></div>
+											<div class="user-name">
+												<%= details[0].companyname%> <span>Employeer</span>
+											</div>
+										</div>
+
+										<!-- User Status Switcher -->
+										<div class="status-switch" id="snackbar-user-status">
+											<label class="user-online current-status">Online</label>
+											<label class="user-invisible">Invisible</label>
+											<!-- Status Indicator -->
+											<span class="status-indicator" aria-hidden="true"></span>
+										</div>
+									</div>
+
+									<ul class="user-menu-small-nav">
+										<li><a href="http://localhost:3000/logout/company"><i
+													class="icon-material-outline-power-settings-new"></i> Logout</a>
+										</li>
+									</ul>
+
+								</div>
+							</div>
+
+						</div>
+						<!-- User Menu / End -->
+						<!-- Mobile Navigation Button -->
+						<span class="mmenu-trigger">
+							<button class="hamburger hamburger--collapse" type="button">
+								<span class="hamburger-box">
+									<span class="hamburger-inner"></span>
+								</span>
+							</button>
+						</span>
+
+					</div>
+					<!-- Right Side Content / End -->
+
+				</div>
+			</div>
+			<!-- Header / End -->
+
+		</header>
+		<div class="clearfix"></div>
+		<!-- Header Container / End -->
+		<!-- Titlebar
+================================================== -->
+		<div class="single-page-header freelancer-header" data-background-image="/images/single-freelancer.jpg">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="single-page-header-inner">
+							<div class="left-side">
+								<div class="header-image freelancer-avatar"><img src="<%= info.image %>" alt=""></div>
+								<div class="header-details">
+
+
+									<h3>
+										<label>
+											<%=info.f_name%>
+												<%=info.l_name%>
+										</label>
+										<label>Account Type: <%=info.acc_type%></label>
+										<label>Email: <%=info.email%></label>
+									</h3>
+									<ul>
+										<li>
+											<div class="star-rating" data-rating="5.0"></div>
+										</li>
+										<li><img class="flag" src="/images/flags/de.svg" alt="">
+											<%=info.Nationality%>
+										</li>
+										<li>
+											<div class="verified-badge-with-title">Verified</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Page Content
+================================================== -->
+		<div class="container">
+			<div class="row">
+
+				<!-- Content -->
+				<div class="col-xl-8 col-lg-8 content-right-offset">
+
+					<!-- Page Content -->
+					<div class="single-page-section">
+						<h3 class="margin-bottom-25">About Me</h3>
+						<p>
+							<%=info.intro%>
+						</p>
+
+					</div>
+
+					<!-- Boxed List -->
+					<div class="boxed-list margin-bottom-60">
+						<div class="boxed-list-headline">
+							<h3><i class="icon-material-outline-thumb-up"></i> Work History and Feedback</h3>
+						</div>
+						<ul class="boxed-list-ul">
+							<% for (let i=0; i < info4; i++) { %>
+								<li>
+									<div class="boxed-list-item">
+										<!-- Content -->
+										<div class="item-content">
+											<h4>
+												<%=info3[i].reviewtitle%> <span>Rated as Freelancer</span>
+											</h4>
+											<div class="item-details margin-top-10">
+												<div class="star-rating" data-rating="<%=info3[i].rate%>"></div>
+											</div>
+											<div class="item-description">
+												<p>
+													<%=info3[i].review%>
+												</p>
+											</div>
+										</div>
+									</div>
+								</li>
+								<%}%>
+						</ul>
+
+
+
+					</div>
+					<!-- Boxed List / End -->
+					<div class="centered-button margin-top-35">
+						<a href="#small-dialog-2" class="popup-with-zoom-anim button button-sliding-icon">Leave a Review
+							<i class="icon-material-outline-arrow-right-alt"></i></a>
+					</div>
+
+					<!-- Boxed List -->
+					<div class="boxed-list margin-bottom-60">
+						<div class="boxed-list-headline">
+							<h3><i class="icon-material-outline-business"></i> Employment History</h3>
+						</div>
+						<% for (let i=0; i < info2; i++) { %>
+							<ul class="boxed-list-ul">
+								<li>
+									<div class="boxed-list-item">
+										<!-- Avatar -->
+										<div class="item-image">
+											<img src="<%= info1[i].image %>" alt="">
+										</div>
+
+										<!-- Content -->
+										<div class="item-content">
+											<h4>
+												<%=info1[i].job_title%>
+											</h4>
+											<div class="item-details margin-top-7">
+												<div class="detail-item"><a href="#"><i
+															class="icon-material-outline-business"></i>
+														<%=info1[i].companyname%>
+													</a></div>
+											</div>
+											<div class="item-description">
+												<p>
+													<%=info1[i].job_describe%>
+												</p>
+											</div>
+										</div>
+									</div>
+								</li>
+
+							</ul>
+							<% } %>
+					</div>
+					<!-- Boxed List / End -->
+
+				</div>
+
+				<!-- Sidebar -->
+				<div class="col-xl-4 col-lg-4">
+					<div class="sidebar-container">
+
+						<!-- Profile Overview -->
+						<div class="profile-overview">
+							<div class="overview-item"><strong>
+									<%=info.min_rate%>
+								</strong><span>Hourly Rate</span></div>
+							<div class="overview-item"><strong>53</strong><span>Jobs Done</span></div>
+							<div class="overview-item"><strong>22</strong><span>Rehired</span></div>
+						</div>
+						<!-- Button -->
+						<!-- <form method="post" id="offerjob">
+							<input type="text" name="companyid" id="companyid" value="info5.id%>" hidden>
+							<input type="text" name="freelanceid" id="freelanceid" value="info.id%>" hidden>type="submit" form="offerjob
+
+						</form> -->
+						<%if(rows6[0] && rows6[0].status_job=="Pending" ){%>
+							<a class="apply-now-button popup-with-zoom-anim margin-bottom-50">OFFER ALREADY PENDING <i
+									class="icon-material-outline-arrow-right-alt"></i></a>
+							<%} else{%>
+								<a href="#small-dialog"
+									class="apply-now-button popup-with-zoom-anim margin-bottom-50">Make
+									an
+									Offer <i class="icon-material-outline-arrow-right-alt"></i></a>
+								<%}%>
+
+									<!-- Freelancer Indicators -->
+									<div class="sidebar-widget">
+										<div class="freelancer-indicators">
+
+											<!-- Indicator -->
+											<div class="indicator">
+												<strong>88%</strong>
+												<div class="indicator-bar" data-indicator-percentage="88"><span></span>
+												</div>
+												<span>Job Success</span>
+											</div>
+
+											<!-- Indicator -->
+											<div class="indicator">
+												<strong>100%</strong>
+												<div class="indicator-bar" data-indicator-percentage="100"><span></span>
+												</div>
+												<span>Recommendation</span>
+											</div>
+
+											<!-- Indicator -->
+											<div class="indicator">
+												<strong>90%</strong>
+												<div class="indicator-bar" data-indicator-percentage="90"><span></span>
+												</div>
+												<span>On Time</span>
+											</div>
+
+											<!-- Indicator -->
+											<div class="indicator">
+												<strong>80%</strong>
+												<div class="indicator-bar" data-indicator-percentage="80"><span></span>
+												</div>
+												<span>On Budget</span>
+											</div>
+										</div>
+									</div>
+
+
+
+									<!-- Widget -->
+									<div class="sidebar-widget">
+										<h3>Skills</h3>
+										<div class="task-tags">
+											<span>iOS</span>
+											<span>Android</span>
+											<span>mobile apps</span>
+											<span>design</span>
+											<span>Python</span>
+											<span>Flask</span>
+											<span>PHP</span>
+											<span>WordPress</span>
+										</div>
+									</div>
+
+									<!-- Widget -->
+									<div class="sidebar-widget">
+										<h3>Attachments</h3>
+										<div class="attachments-container">
+											<a href="#" class="attachment-box ripple-effect"><span>
+													<%=info.cover_letter%>
+												</span><i>PDF</i></a>
+											<a href="#" class="attachment-box ripple-effect"><span>
+													<%=info.contract%>
+												</span><i>DOCX</i></a>
+										</div>
+									</div>
+
+									<!-- Sidebar Widget -->
+									<div class="sidebar-widget">
+										<h3>Bookmark</h3>
+
+										<!-- Bookmark Button -->
+										<button class="bookmark-button margin-bottom-25">
+											<span class="bookmark-icon"></span>
+											<span class="bookmark-text">Bookmark</span>
+											<span class="bookmarked-text">Bookmarked</span>
+										</button>
+
+
+
+									</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+		<!-- Spacer -->
+		<div class="margin-top-15"></div>
+		<!-- Spacer / End-->
+		<!-- Footer
+================================================== -->
+		<div id="footer">
+
+			<!-- Footer Top Section -->
+			<div class="footer-top-section">
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-12">
+
+							<!-- Footer Rows Container -->
+							<div class="footer-rows-container">
+
+								<!-- Left Side -->
+								<div class="footer-rows-left">
+									<div class="footer-row">
+										<div class="footer-row-inner footer-logo">
+											<img src="/images/prolancerlogo.jpeg" alt="">
+											<h1 style="font-size: 50px; color: blanchedalmond;">
+												<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ProLancers </strong>
+											</h1>
+										</div>
+									</div>
+								</div>
+
+								<!-- Right Side -->
+								<div class="footer-rows-right">
+
+									<!-- Social Icons -->
+									<div class="footer-row">
+										<div class="footer-row-inner">
+											<ul class="footer-social-links">
+												<li>
+													<a href="#" title="Facebook" data-tippy-placement="bottom"
+														data-tippy-theme="light">
+														<i class="icon-brand-facebook-f"></i>
+													</a>
+												</li>
+												<li>
+													<a href="#" title="Twitter" data-tippy-placement="bottom"
+														data-tippy-theme="light">
+														<i class="icon-brand-twitter"></i>
+													</a>
+												</li>
+												<li>
+													<a href="#" title="Google Plus" data-tippy-placement="bottom"
+														data-tippy-theme="light">
+														<i class="icon-brand-google-plus-g"></i>
+													</a>
+												</li>
+												<li>
+													<a href="#" title="LinkedIn" data-tippy-placement="bottom"
+														data-tippy-theme="light">
+														<i class="icon-brand-linkedin-in"></i>
+													</a>
+												</li>
+											</ul>
+											<div class="clearfix"></div>
+										</div>
+									</div>
+
+									<!-- Language Switcher -->
+									<div class="footer-row">
+										<div class="footer-row-inner">
+											<label>Language : English</label>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<!-- Footer Rows Container / End -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Footer Top Section / End -->
+
+			<!-- Footer Middle Section -->
+			<div class="footer-middle-section">
+				<div class="container">
+					<div class="row">
+
+
+						<!-- Links -->
+						<div class="col-xl-2 col-lg-2 col-md-">
+							<div class="footer-links">
+								<h3>For Employers</h3>
+								<ul>
+									<li><a href="http://localhost:3000/dashboard-post-a-job"><span>Post a Job</span></a>
+									</li>
+									<li><a href="http://localhost:3000/dashboard-post-a-task"><span>Post a
+												Task</span></a></li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- Links -->
+						<div class="col-xl-2 col-lg-2 col-md-3">
+							<div class="footer-links">
+								<h3>Helpful Links</h3>
+								<ul>
+									<li><a href="http://localhost:3000/pages-contact"><span>Contact</span></a></li>
+									<li><a href="http://localhost:3000/privacy"><span>Privacy Policy</span></a></li>
+									<li><a href="http://localhost:3000/termsofuse"><span>Terms of Use</span></a></li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- Links -->
+						<div class="col-xl-2 col-lg-2 col-md-3">
+							<div class="footer-links">
+								<h3>Account</h3>
+								<ul>
+									<li><a href="http://localhost:3000/pages-login"><span>Log In</span></a></li>
+									<li><a href="http://localhost:3000/companyprofile"><span>My
+										Account</span></a></li>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+			<!-- Footer Middle Section / End -->
+
+			<!-- Footer Copyrights -->
+			<div class="footer-bottom-section">
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-12">
+							© 2022 <strong>Prolancers</strong>. All Rights Reserved.
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Footer Copyrights / End -->
+
+		</div>
+		<!-- Footer / End -->
+
+
+
+
+	</div>
+	<!-- Wrapper / End -->
+
+
+
+	<!-- Make an Offer Popup
+================================================== -->
+	<div id="small-dialog" class="zoom-anim-dialog mfp-hide dialog-with-tabs">
+
+		<!--Tabs -->
+		<div class="sign-in-form">
+
+			<ul class="popup-tabs-nav">
+				<li><a href="#tab">Make an Offer</a></li>
+			</ul>
+
+			<div class="popup-tabs-container">
+
+				<!-- Tab -->
+				<div class="popup-tab-content" id="tab">
+
+					<!-- Welcome Text -->
+					<div class="welcome-text">
+						<h3>Discuss your project with <%= info.fname %>
+						</h3>
+					</div>
+
+					<!-- Form -->
+					<form method="post" id="makeanoffer" action="/makeanoffer">
+
+						<!-- <div class="input-with-icon-left">
+							<i class="icon-material-outline-account-circle"></i>
+							<input type="text" class="input-text with-border" name="name" id="name"
+								placeholder="First and Last Name" />
+						</div>
+
+						<div class="input-with-icon-left">
+							<i class="icon-material-baseline-mail-outline"></i>
+							<input type="text" class="input-text with-border" name="emailaddress" id="emailaddress"
+								placeholder="Email Address" />
+						</div> -->
+						<input hidden type="text" value="<%= info5.id %>" name="companyid">
+						<input hidden type="text" name="freelanceid" id="freelanceid" value="<%=info.id%>"><textarea
+							name="textarea" cols="10" placeholder="Message" class="with-border"></textarea>
+
+						<div class="uploadButton margin-top-25">
+							<input class="uploadButton-input" type="file" accept="image/*, application/pdf" id="upload"
+								multiple />
+							<label class="uploadButton-button ripple-effect" for="upload">Add Attachments</label>
+							<span class="uploadButton-file-name">Allowed file types: zip, pdf, png, jpg <br> Max. files
+								size: 50 MB.</span>
+						</div>
+
+
+						<!-- Button -->
+						<button class="button margin-top-35 full-width button-sliding-icon ripple-effect" type="submit"
+							form="makeanoffer">Make
+							an
+							Offer <i class="icon-material-outline-arrow-right-alt"></i></button>
+					</form>
+
+
+				</div>
+				<!-- Login -->
+				<div class="popup-tab-content" id="loginn">
+
+					<!-- Welcome Text -->
+					<div class="welcome-text">
+						<h3>Discuss Your Project With Tom</h3>
+					</div>
+
+					<!-- Form -->
+					<form method="post" id="make-an-offer-form">
+
+						<div class="input-with-icon-left">
+							<i class="icon-material-outline-account-circle"></i>
+							<input type="text" class="input-text with-border" name="name2" id="name2"
+								placeholder="First and Last Name" required />
+						</div>
+
+						<div class="input-with-icon-left">
+							<i class="icon-material-baseline-mail-outline"></i>
+							<input type="text" class="input-text with-border" name="emailaddress2" id="emailaddress2"
+								placeholder="Email Address" required />
+						</div>
+
+						<textarea name="textarea" cols="10" placeholder="Message" class="with-border"></textarea>
+
+						<div class="uploadButton margin-top-25">
+							<input class="uploadButton-input" type="file" accept="image/*, application/pdf"
+								id="upload-cv" multiple />
+							<label class="uploadButton-button" for="upload-cv">Add Attachments</label>
+							<span class="uploadButton-file-name">Allowed file types: zip, pdf, png, jpg <br> Max. files
+								size: 50 MB.</span>
+						</div>
+
+					</form>
+
+					<!-- Button -->
+					<button class="button full-width button-sliding-icon ripple-effect" type="submit"
+						form="make-an-offer-form">Make an Offer <i
+							class="icon-material-outline-arrow-right-alt"></i></button>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- Make an Offer Popup / End -->
+	<!-- Leave a Review Popup
+================================================== -->
+	<div id="small-dialog-2" class="zoom-anim-dialog mfp-hide dialog-with-tabs">
+
+		<!--Tabs -->
+		<div class="sign-in-form">
+
+			<ul class="popup-tabs-nav">
+				<li><a href="#tab">Leave a Review</a></li>
+			</ul>
+
+			<div class="popup-tabs-container">
+
+				<!-- Tab -->
+				<div class="popup-tab-content" id="tab">
+
+					<!-- Welcome Text -->
+					<div class="welcome-text">
+						<h3>What is it like to work with me?</h3>
+
+						<!-- Form -->
+						<form method="POST" id="leave-company-review-form" action="/givefreelancerreview">
+
+							<!-- Leave Rating -->
+							<div class="clearfix"></div>
+							<div class="clearfix"></div>
+							<!-- Leave Rating / End-->
+
+							<div class="row">
+								<div class="col-xl-12">
+									<div class="input-with-icon-left" title="Rate out of five"
+										data-tippy-placement="bottom">
+										<i class="icon-material-outline-star"></i>
+										<input type="number" min="0" max="5" class="input-text with-border" name="rate"
+											id="rate" placeholder="Rating" />
+									</div>
+								</div>
+								<input hidden type="text" value="<%= info5.id %>" name="companyid">
+								<input hidden type="text" name="freelanceid" id="freelanceid" value="<%=info.id%>">
+								<div class="col-xl-12">
+									<div class="input-with-icon-left" title="Write Stranger to add review anonymously"
+										data-tippy-placement="bottom" required>
+										<i class="icon-material-outline-account-circle"></i>
+										<input type="text" class="input-text with-border" name="name" id="name"
+											placeholder="First and Last Name" />
+									</div>
+								</div>
+
+								<div class="col-xl-12">
+									<div class="input-with-icon-left">
+										<i class="icon-material-outline-rate-review"></i>
+										<input type="text" class="input-text with-border" name="reviewtitle"
+											id="reviewtitle" placeholder="Review Title" required />
+									</div>
+								</div>
+							</div>
+
+							<textarea class="with-border" placeholder="Review" name="message" id="message" cols="7"
+								required></textarea>
+
+						</form>
+
+						<!-- Button -->
+						<button href="http://localhost:3000/findfreelancerprofilecompany"
+							class="button margin-top-35 full-width button-sliding-icon ripple-effect" type="submit"
+							value="Submit" form="leave-company-review-form">Leave a Review <i
+								class="icon-material-outline-arrow-right-alt"></i></button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!-- Leave a Review Popup / End -->
+
+
+
+		<!-- Scripts
+================================================== -->
+		<script src="/js/jquery-3.3.1.min.js"></script>
+		<script src="/js/jquery-migrate-3.0.0.min.js"></script>
+		<script src="/js/mmenu.min.js"></script>
+		<script src="/js/tippy.all.min.js"></script>
+		<script src="/js/simplebar.min.js"></script>
+		<script src="/js/bootstrap-slider.min.js"></script>
+		<script src="/js/bootstrap-select.min.js"></script>
+		<script src="/js/snackbar.js"></script>
+		<script src="/js/clipboard.min.js"></script>
+		<script src="/js/counterup.min.js"></script>
+		<script src="/js/magnific-popup.min.js"></script>
+		<script src="/js/slick.min.js"></script>
+		<script src="/js/custom.js"></script>
+
+		<!-- Snackbar // documentation: https://www.polonel.com/snackbar/ -->
+		<script>
+			// Snackbar for user status switcher
+			$('#snackbar-user-status label').click(function () {
+				Snackbar.show({
+					text: 'Your status has been changed!',
+					pos: 'bottom-center',
+					showAction: false,
+					actionText: "Dismiss",
+					duration: 3000,
+					textColor: '#fff',
+					backgroundColor: '#383838'
+				});
+			});
+
+			// Snackbar for "place a bid" button
+			$('#snackbar-place-bid').click(function () {
+				Snackbar.show({
+					text: 'Your bid has been placed!',
+				});
+			});
+
+
+			// Snackbar for copy to clipboard button
+			$('.copy-url-button').click(function () {
+				Snackbar.show({
+					text: 'Copied to clipboard!',
+				});
+			}); 
+		</script>
+
+</body>
+
+</html>

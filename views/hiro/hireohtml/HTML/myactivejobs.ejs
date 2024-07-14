@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<!-- Basic Page Needs
+================================================== -->
+	<title>Prolancer</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+================================================== -->
+	<link rel="stylesheet" type='text/css' href="/css/style.css">
+	<link rel="stylesheet" type='text/css' href="/css/colors/blue.css">
+
+</head>
+
+<body>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header Container
+================================================== -->
+		<header id="header-container" class="fullwidth">
+
+			<!-- Header -->
+			<div id="header">
+				<div class="container">
+
+					<!-- Left Side Content -->
+					<div class="left-side">
+
+						<!-- Logo -->
+						<div id="logo">
+							<a href="http://localhost:3000/index"><img src="/images/prolancerlogo.jpeg" alt=""></a>
+						</div>
+
+						<!-- Main Navigation -->
+						<nav id="navigation">
+							<ul id="responsive">
+
+								<li><a href="#" class="current">Home</a>
+									<ul class="dropdown-nav">
+										<li><a href="http://localhost:3000/index">Home Page</a></li>
+
+									</ul>
+								</li>
+
+								<li><a href="#">Find Work</a>
+									<ul class="dropdown-nav">
+										<li><a href="http://localhost:3000/jobs-grid-layout-full-page">Browse Jobs</a>
+										</li>
+										<li><a href="http://localhost:3000/tasks-grid-layout-full-page">Browse Tasks</a>
+										</li>
+										<li><a href="http://localhost:3000/browsecompanyfreelancer">Browse Companies</a>
+										</li>
+									</ul>
+								</li>
+
+
+								<li><a href="#">Dashboard</a>
+									<ul class="dropdown-nav">
+										<li><a href="http://localhost:3000/single-freelancer-profile">View Profile</a>
+										</li>
+										<li><a href="http://localhost:3000/dashboard-reviews">Reviews</a></li>
+
+										<li><a href="http://localhost:3000/dashboard-my-active-bids">Active Bids</a>
+										</li>
+										<li><a href="http://localhost:3000/myactivejobs">Active Jobs</a>
+										</li>
+										<li><a href="http://localhost:3000/dashboard-settings">Settings</a></li>
+									</ul>
+								</li>
+
+								<li><a href="http://localhost:3000/pages-contact">Contact us</a>
+								</li>
+
+							</ul>
+						</nav>
+						</nav>
+						<div class="clearfix"></div>
+						<!-- Main Navigation / End -->
+
+					</div>
+					<!-- Left Side Content / End -->
+
+
+					<!-- Right Side Content / End -->
+					<div class="right-side">
+
+
+						<!-- User Menu -->
+						<div class="header-widget">
+
+							<!-- Messages -->
+							<div class="header-notifications user-menu">
+								<div class="header-notifications-trigger">
+									<a href="#">
+										<div class="user-avatar status-online"><img src="<%= details[0].image %>"
+												alt=""></div>
+									</a>
+								</div>
+
+								<!-- Dropdown -->
+								<div class="header-notifications-dropdown">
+
+									<!-- User Status -->
+									<div class="user-status">
+
+										<!-- User Name / Avatar -->
+										<div class="user-details">
+											<div class="user-avatar status-online"><img src="<%= details[0].image %>"
+													alt=""></div>
+											<div class=" user-name">
+												<%= details[0].f_name + " " + details[0].l_name %>
+													<span>Freelancer</span>
+											</div>
+										</div>
+
+										<!-- User Status Switcher -->
+										<div class="status-switch" id="snackbar-user-status">
+											<label class="user-online current-status">Online</label>
+											<label class="user-invisible">Invisible</label>
+											<!-- Status Indicator -->
+											<span class="status-indicator" aria-hidden="true"></span>
+										</div>
+									</div>
+
+									<ul class="user-menu-small-nav">
+										<li><a href="http://localhost:3000/logout/freelancer"><i
+													class="icon-material-outline-power-settings-new"></i> Logout</a>
+										</li>
+										<!-- Mobile Navigation Button -->
+										<span class="mmenu-trigger">
+											<button class="hamburger hamburger--collapse" type="button">
+												<span class="hamburger-box">
+													<span class="hamburger-inner"></span>
+												</span>
+											</button>
+										</span>
+
+								</div>
+								<!-- Right Side Content / End -->
+
+							</div>
+						</div>
+						<!-- Header / End -->
+
+		</header>
+		<div class="clearfix"></div>
+		<!-- Header Container / End -->
+		<!-- Dashboard Container -->
+		<div class="dashboard-container">
+
+
+
+			<!-- Dashboard Content
+	================================================== -->
+			<div class="dashboard-content-container" data-simplebar>
+				<div class="dashboard-content-inner">
+
+					<!-- Dashboard Headline -->
+					<div class="dashboard-headline">
+						<h3>My Active Jobs</h3>
+
+						<!-- Breadcrumbs -->
+						<nav id="breadcrumbs" class="dark">
+							<ul>
+								<li><a href="http://localhost:3000/index">Home</a></li>
+								<li><a href="http://localhost:3000/index">Dashboard</a></li>
+								<li>My Active Jobs</li>
+							</ul>
+						</nav>
+					</div>
+
+					<!-- Row -->
+					<div class="row">
+
+						<!-- Dashboard Box -->
+						<div class="col-xl-12">
+							<div class="dashboard-box margin-top-0">
+
+								<!-- Headline -->
+								<div class="headline">
+									<h3><i class="icon-material-outline-gavel"></i> Jobs Applied</h3>
+								</div>
+
+								<div class="content">
+									<ul class="dashboard-box-list">
+										<% for (let i=0; i < info1.length; i++) { %>
+											<% if (info1[i].status_job!="Declined" ) { %>
+
+												<li>
+
+													<!-- Job Listing -->
+													<div class="job-listing width-adjustment">
+
+														<!-- Job Listing Details -->
+														<div class="job-listing-details">
+
+															<!-- Details -->
+															<div class="job-listing-description">
+																<h3 class="job-listing-title"><a href="#"></a>
+																	<%=info1[i].job_title%>
+																		</a>
+																</h3>
+															</div>
+															<%if(info1[i].status=="Accepted"){%>
+
+												<li><button class="button"
+														href="http://localhost:3000/resign/<%= info1[i].id %>">Click
+														to
+														Resign</button>
+												</li>
+												<%}%>
+								</div>
+							</div>
+
+							<!-- Task Details -->
+							<ul class="dashboard-task-info">
+								<li><strong>PKR <%=info1[i].max%>
+									</strong><span>Salary</span></li>
+								<li><strong>
+										<%=info1[i].jobtype%>
+									</strong><span>Job Type</span></li>
+								<li><strong>
+										<%=info1[i].status_job%>
+									</strong><span>Status</span></li>
+
+
+							</ul>
+
+							</li>
+							<%}%>
+								<%}%>
+
+									</ul>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<br>
+			<br>
+			<!-- Row / End -->
+			<div class="row">
+
+				<!-- Dashboard Box -->
+				<div class="col-xl-12">
+					<div class="dashboard-box margin-top-0">
+
+						<!-- Headline -->
+						<div class="headline">
+							<h3><i class="icon-material-outline-gavel"></i> Jobs Offered</h3>
+						</div>
+
+						<div class="content">
+							<ul>
+								<% for (let i=0; i < info2.length; i++) { %>
+									<% if (info2[i].status_job!="Declined" ) { %>
+
+										<li>
+
+											<!-- Job Listing -->
+											<div class="job-listing width-adjustment">
+
+												<!-- Job Listing Details -->
+												<div class="job-listing-details">
+
+													<!-- Details -->
+													<div class="job-listing-description">
+														<h3 class="job-listing-title"><a href="#"></a>
+															<%=info2[i].companyname%>
+																</a>
+														</h3>
+													</div>
+												</div>
+											</div>
+
+											<!-- Task Details -->
+											<ul class="dashboard-task-info">
+												<li><strong>Location: <%=info2[i].headquarter%>
+													</strong><span></span></li>
+												<li><strong>Status: <%=info2[i].status_job%>
+													</strong><span></span></li>
+
+												<%if(info2[i].status_job=="Pending"){%>
+
+													<li><a class="button"
+															href="http://localhost:3000/interview/<%= info2[i].id %>">Click
+															to
+															Interview</a>
+													</li>
+													<li><a class="button"
+															href="http://localhost:3000/decline/<%= info2[i].id %>">Click
+															to
+															decline</a>
+													</li>
+
+													<%}%>
+
+											</ul>
+
+										</li>
+										<%}%>
+											<%}%>
+
+
+							</ul>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- Row / End -->
+
+
+
+		</div>
+	</div>
+	<!-- Dashboard Content / End -->
+
+	</div>
+	<!-- Dashboard Container / End -->
+	<!-- Footer
+================================================== -->
+	<div id="footer">
+
+		<!-- Footer Top Section -->
+		<div class="footer-top-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-12">
+
+						<!-- Footer Rows Container -->
+						<div class="footer-rows-container">
+
+							<!-- Left Side -->
+							<div class="footer-rows-left">
+								<div class="footer-row">
+									<div class="footer-row-inner footer-logo">
+										<img src="/images/prolancerlogo.jpeg" alt="">
+										<h1 style="font-size: 50px; color: blanchedalmond;">
+											<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ProLancers </strong>
+										</h1>
+									</div>
+								</div>
+							</div>
+
+							<!-- Right Side -->
+							<div class="footer-rows-right">
+
+								<!-- Social Icons -->
+								<div class="footer-row">
+									<div class="footer-row-inner">
+										<ul class="footer-social-links">
+											<li>
+												<a href="#" title="Facebook" data-tippy-placement="bottom"
+													data-tippy-theme="light">
+													<i class="icon-brand-facebook-f"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#" title="Twitter" data-tippy-placement="bottom"
+													data-tippy-theme="light">
+													<i class="icon-brand-twitter"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#" title="Google Plus" data-tippy-placement="bottom"
+													data-tippy-theme="light">
+													<i class="icon-brand-google-plus-g"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#" title="LinkedIn" data-tippy-placement="bottom"
+													data-tippy-theme="light">
+													<i class="icon-brand-linkedin-in"></i>
+												</a>
+											</li>
+										</ul>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+
+								<!-- Language Switcher -->
+								<div class="footer-row">
+									<div class="footer-row-inner">
+										<label>Language : English</label>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<!-- Footer Rows Container / End -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Footer Top Section / End -->
+
+		<!-- Footer Middle Section -->
+		<div class="footer-middle-section">
+			<div class="container">
+				<div class="row">
+
+					<!-- Links -->
+					<div class="col-xl-2 col-lg-2 col-md-3">
+						<div class="footer-links">
+							<h3>For Candidates</h3>
+							<ul>
+								<li><a href="http://localhost:3000/jobs-grid-layout-full-page"><span>Browse
+											Jobs</span></a></li>
+								<li><a href="http://localhost:3000/single-freelancer-profile"><span>
+											Resume</span></a></li>
+								<li><a href="http://localhost:3000/jobs-grid-layout-full-page"><span>Job
+											Alerts</span></a></li>
+								<li><a href="http://localhost:3000/dashboard-bookmarks"><span>My
+											Bookmarks</span></a></li>
+							</ul>
+						</div>
+					</div>
+
+
+
+					<!-- Links -->
+					<div class="col-xl-2 col-lg-2 col-md-3">
+						<div class="footer-links">
+							<h3>Helpful Links</h3>
+							<ul>
+								<li><a href="http://localhost:3000/pages-contact"><span>Contact</span></a></li>
+								<li><a href="http://localhost:3000/privacy"><span>Privacy Policy</span></a></li>
+								<li><a href="http://localhost:3000/termsofuse"><span>Terms of Use</span></a></li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Links -->
+					<div class="col-xl-2 col-lg-2 col-md-3">
+						<div class="footer-links">
+							<h3>Account</h3>
+							<ul>
+								<li><a href="http://localhost:3000/pages-login"><span>Log In</span></a></li>
+								<li><a href="http://localhost:3000/single-freelancer-profile"><span>My
+											Account</span></a></li>
+							</ul>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+		<!-- Footer Middle Section / End -->
+
+		<!-- Footer Copyrights -->
+		<div class="footer-bottom-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-12">
+						© 2022 <strong>Prolancers</strong>. All Rights Reserved.
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Footer Copyrights / End -->
+
+	</div>
+	<!-- Footer / End -->
+
+
+
+	</div>
+	<!-- Wrapper / End -->
+
+
+	<!-- Edit Bid Popup
+================================================== -->
+	<div id="small-dialog" class="zoom-anim-dialog mfp-hide dialog-with-tabs">
+
+		<!--Tabs -->
+		<div class="sign-in-form">
+
+			<ul class="popup-tabs-nav">
+				<li><a href="#tab">Edit Bid</a></li>
+			</ul>
+
+			<div class="popup-tabs-container">
+
+				<!-- Tab -->
+				<div class="popup-tab-content" id="tab">
+
+					<!-- Bidding -->
+					<div class="bidding-widget">
+						<!-- Headline -->
+						<span class="bidding-detail">Set your <strong>minimal hourly rate</strong></span>
+
+						<!-- Price Slider -->
+						<div class="bidding-value">$<span id="biddingVal"></span></div>
+						<input class="bidding-slider" type="text" value="" data-slider-handle="custom"
+							data-slider-currency="$" data-slider-min="10" data-slider-max="60" data-slider-value="40"
+							data-slider-step="1" data-slider-tooltip="hide" />
+
+						<!-- Headline -->
+						<span class="bidding-detail margin-top-30">Set your <strong>delivery time</strong></span>
+
+						<!-- Fields -->
+						<div class="bidding-fields">
+							<div class="bidding-field">
+								<!-- Quantity Buttons -->
+								<div class="qtyButtons with-border">
+									<div class="qtyDec"></div>
+									<input type="text" name="qtyInput" value="2">
+									<div class="qtyInc"></div>
+								</div>
+							</div>
+							<div class="bidding-field">
+								<select class="selectpicker default with-border">
+									<option selected>Days</option>
+									<option>Hours</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<!-- Button -->
+					<button class="button full-width button-sliding-icon ripple-effect" type="submit">Save Changes <i
+							class="icon-material-outline-arrow-right-alt"></i></button>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- Edit Bid Popup / End -->
+
+	<!-- Scripts
+================================================== -->
+	<script src="/js/jquery-3.3.1.min.js"></script>
+	<script src="/js/jquery-migrate-3.0.0.min.js"></script>
+	<script src="/js/mmenu.min.js"></script>
+	<script src="/js/tippy.all.min.js"></script>
+	<script src="/js/simplebar.min.js"></script>
+	<script src="/js/bootstrap-slider.min.js"></script>
+	<script src="/js/bootstrap-select.min.js"></script>
+	<script src="/js/snackbar.js"></script>
+	<script src="/js/clipboard.min.js"></script>
+	<script src="/js/counterup.min.js"></script>
+	<script src="/js/magnific-popup.min.js"></script>
+	<script src="/js/slick.min.js"></script>
+	<script src="/js/custom.js"></script>
+
+	<!-- Snackbar // documentation: https://www.polonel.com/snackbar/ -->
+	<script>
+		// Snackbar for user status switcher
+		$('#snackbar-user-status label').click(function () {
+			Snackbar.show({
+				text: 'Your status has been changed!',
+				pos: 'bottom-center',
+				showAction: false,
+				actionText: "Dismiss",
+				duration: 3000,
+				textColor: '#fff',
+				backgroundColor: '#383838'
+			});
+		}); 
+	</script>
+
+</body>
+
+</html>

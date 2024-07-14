@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<!-- Basic Page Needs
+================================================== -->
+	<title>Prolancer</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+================================================== -->
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/colors/blue.css">
+
+</head>
+
+<body>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header Container
+================================================== -->
+		<header id="header-container" class="fullwidth">
+
+			<!-- Header -->
+			<div id="header">
+				<div class="container">
+
+					<!-- Left Side Content -->
+					<div class="left-side">
+
+						<!-- Logo -->
+						<div id="logo">
+							<a href="http://localhost:3000/index-company"><img src="/images/prolancerlogo.jpeg"
+									alt=""></a>
+						</div>
+
+						<!-- Main Navigation -->
+						<nav id="navigation">
+							<ul id="responsive">
+
+								<li><a href="#" class="current">Home</a>
+									<ul class="dropdown-nav">
+										<li><a href="http://localhost:3000/index-company">Home Page</a></li>
+
+									</ul>
+								</li>
+
+								<li><a href="#">Find Companies</a>
+									<ul class="dropdown-nav">
+										<li><a href="http://localhost:3000/browse-companies">Browse Companies</a></li>
+										<li><a href="http://localhost:3000/companyprofile">Company Profile</a>
+										</li>
+									</ul>
+								</li>
+
+								<li><a href="#">For Company</a>
+									<ul class="dropdown-nav">
+										<li><a href="http://localhost:3000/freelancers-grid-layout-full-page">Find a
+												Freelancer</a>
+										</li>
+										<li><a href="http://localhost:3000/dashboard-post-a-job">Post a Job</a></li>
+										<li><a href="http://localhost:3000/dashboard-post-a-task">Post a Task</a></li>
+									</ul>
+								</li>
+
+								<li><a href="#">Dashboard</a>
+									<ul class="dropdown-nav">
+										<li><a href="http://localhost:3000/companyreviews">Reviews</a></li>
+										<li><a href="http://localhost:3000/dashboard-manage-jobs">Jobs</a>
+											<ul class="dropdown-nav">
+												<li><a href="http://localhost:3000/dashboard-manage-jobs">Manage
+														Jobs</a></li>
+												<li><a href="http://localhost:3000/dashboard-post-a-job">Post a Job</a>
+												</li>
+											</ul>
+										</li>
+										<li><a href="http://localhost:3000/dashboard-manage-tasks">Tasks</a>
+											<ul class="dropdown-nav">
+												<li><a href="http://localhost:3000/dashboard-manage-tasks">Manage
+														Tasks</a></li>
+												<li><a href="http://localhost:3000/dashboard-post-a-task">Post a
+														Task</a></li>
+											</ul>
+										</li>
+										<li><a href="http://localhost:3000/setting-company">Settings</a></li>
+									</ul>
+								</li>
+
+								<li><a href="http://localhost:3000/pages-contact">Contact us</a>
+								</li>
+
+							</ul>
+						</nav>
+						</nav>
+						<div class="clearfix"></div>
+						<!-- Main Navigation / End -->
+
+					</div>
+					<!-- Left Side Content / End -->
+
+
+					<!-- Right Side Content / End -->
+					<div class="right-side">
+
+
+						<!-- User Menu -->
+						<div class="header-widget">
+
+							<!-- Messages -->
+							<div class="header-notifications user-menu">
+								<div class="header-notifications-trigger">
+									<a href="#">
+										<div class="user-avatar status-online"><img src="<%= details[0].image %>"
+												alt=""></div>
+									</a>
+								</div>
+
+								<!-- Dropdown -->
+								<div class="header-notifications-dropdown">
+
+									<!-- User Status -->
+									<div class="user-status">
+
+										<!-- User Name / Avatar -->
+										<div class="user-details">
+											<div class="user-avatar status-online"><img src="<%= details[0].image %>"
+													alt="Company Logo"></div>
+											<div class="user-name">
+												<%= details[0].companyname%> <span>Employeer</span>
+											</div>
+										</div>
+
+										<!-- User Status Switcher -->
+										<div class="status-switch" id="snackbar-user-status">
+											<label class="user-online current-status">Online</label>
+											<label class="user-invisible">Invisible</label>
+											<!-- Status Indicator -->
+											<span class="status-indicator" aria-hidden="true"></span>
+										</div>
+									</div>
+
+									<ul class="user-menu-small-nav">
+										<li><a href="http://localhost:3000/logout/company"><i
+													class="icon-material-outline-power-settings-new"></i> Logout</a>
+										</li>
+									</ul>
+
+								</div>
+							</div>
+
+						</div>
+						<!-- User Menu / End -->
+						<!-- Mobile Navigation Button -->
+						<span class="mmenu-trigger">
+							<button class="hamburger hamburger--collapse" type="button">
+								<span class="hamburger-box">
+									<span class="hamburger-inner"></span>
+								</span>
+							</button>
+						</span>
+
+					</div>
+					<!-- Right Side Content / End -->
+
+				</div>
+			</div>
+			<!-- Header / End -->
+
+		</header>
+		<div class="clearfix"></div>
+		<!-- Header Container / End -->
+
+
+		<!-- Dashboard Content
+	================================================== -->
+		<div class="dashboard-content-container" data-simplebar>
+			<div class="dashboard-content-inner">
+
+				<!-- Dashboard Headline -->
+				<div class="dashboard-headline">
+					<h3>Manage Candidates</h3>
+
+					<!-- Breadcrumbs -->
+					<nav id="breadcrumbs" class="dark">
+						<ul>
+							<li><a href="http://localhost:3000/index-company">Home</a></li>
+							<li><a href="http://localhost:3000/index-company">Dashboard</a></li>
+							<li>Manage Candidates</li>
+						</ul>
+					</nav>
+				</div>
+
+				<!-- Row -->
+				<div class="row">
+
+					<!-- Dashboard Box -->
+					<div class="col-xl-12">
+						<div class="dashboard-box margin-top-0">
+
+							<!-- Headline -->
+							<div class="headline">
+								<h3><i class="icon-material-outline-supervisor-account"></i> Candidates</h3>
+							</div>
+
+							<div class="content">
+								<% for (let i=0; i < info1.length; i++) { %>
+									<% if(info1[i].status!="Approved" ) {%>
+										<ul class="dashboard-box-list">
+											<li>
+												<!-- Overview -->
+												<div class="freelancer-overview manage-candidates">
+													<div class="freelancer-overview-inner">
+
+														<!-- Avatar -->
+														<div class="freelancer-avatar">
+															<div class="verified-badge"></div>
+															<a
+																href="http://localhost:3000/findfreelancerprofilecompany/<%=info1[i].freelancerid%>"><img
+																	src="<%= info1[i].image %>" alt=""></a>
+														</div>
+
+														<!-- Name -->
+														<div class="freelancer-name">
+															<h4><a href="#">
+																	<%=info1[i].f_name%>
+																		<%=info1[i].l_name%> <img class="flag"
+																				src="/images/flags/au.svg" alt=""
+																				title="Australia"
+																				data-tippy-placement="top">
+																</a></h4>
+
+															<!-- Details -->
+															<span class="freelancer-detail-item"><a href="#"><i
+																		class="icon-feather-mail"></i>
+																	<%=info1[i].email%>
+																</a></span>
+
+															<!-- Rating -->
+															<div class="freelancer-rating">
+																<div class="star-rating" data-rating="5.0"></div>
+															</div>
+															<%if(info1[i].status_job=="pending") {%>
+																<!-- Buttons -->
+																<div
+																	class="buttons-to-right always-visible margin-top-25 margin-bottom-5">
+																	<a href="http://localhost:3000/acceptjob/<%=info1[i].id %>"
+																		class="button"><i
+																			class="icon-feather-file-text"></i>Accept
+																		Application</a>
+
+																	<a href="http://localhost:3000/rejectjob/<%=info1[i].id %>"
+																		class="button gray ripple-effect ico"
+																		title="Remove Candidate"
+																		data-tippy-placement="top"><i
+																			class="icon-feather-trash-2"></i></a>
+																</div>
+																<%}%>
+														</div>
+													</div>
+												</div>
+											</li>
+											<%}}%>
+
+
+										</ul>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<!-- Row / End -->
+
+				<!-- Footer -->
+				<div class="dashboard-footer-spacer"></div>
+				<div class="small-footer margin-top-15">
+					<div class="small-footer-copyrights">
+						© 2022 <strong>ProLancers</strong>. All Rights Reserved.
+					</div>
+					<ul class="footer-social-links">
+						<li>
+							<a href="#" title="Facebook" data-tippy-placement="top">
+								<i class="icon-brand-facebook-f"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#" title="Twitter" data-tippy-placement="top">
+								<i class="icon-brand-twitter"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#" title="Google Plus" data-tippy-placement="top">
+								<i class="icon-brand-google-plus-g"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#" title="LinkedIn" data-tippy-placement="top">
+								<i class="icon-brand-linkedin-in"></i>
+							</a>
+						</li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+				<!-- Footer / End -->
+
+			</div>
+		</div>
+		<!-- Dashboard Content / End -->
+
+	</div>
+	<!-- Dashboard Container / End -->
+
+	</div>
+	<!-- Wrapper / End -->
+
+
+	<!-- Send Direct Message Popup
+================================================== -->
+	<div id="small-dialog" class="zoom-anim-dialog mfp-hide dialog-with-tabs">
+
+		<!--Tabs -->
+		<div class="sign-in-form">
+
+			<ul class="popup-tabs-nav">
+				<li><a href="#tab">Send Message</a></li>
+			</ul>
+
+			<div class="popup-tabs-container">
+
+				<!-- Tab -->
+				<div class="popup-tab-content" id="tab">
+
+					<!-- Welcome Text -->
+					<div class="welcome-text">
+						<h3>Direct Message To Sindy</h3>
+					</div>
+
+					<!-- Form -->
+					<form method="post" id="send-pm">
+						<textarea name="textarea" cols="10" placeholder="Message" class="with-border"
+							required></textarea>
+					</form>
+
+					<!-- Button -->
+					<button class="button full-width button-sliding-icon ripple-effect" type="submit"
+						form="send-pm">Send <i class="icon-material-outline-arrow-right-alt"></i></button>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- Send Direct Message Popup / End -->
+
+
+	<!-- Scripts
+================================================== -->
+	<script src="/js/jquery-3.3.1.min.js"></script>
+	<script src="/js/jquery-migrate-3.0.0.min.js"></script>
+	<script src="/js/mmenu.min.js"></script>
+	<script src="/js/tippy.all.min.js"></script>
+	<script src="/js/simplebar.min.js"></script>
+	<script src="/js/bootstrap-slider.min.js"></script>
+	<script src="/js/bootstrap-select.min.js"></script>
+	<script src="/js/snackbar.js"></script>
+	<script src="/js/clipboard.min.js"></script>
+	<script src="/js/counterup.min.js"></script>
+	<script src="/js/magnific-popup.min.js"></script>
+	<script src="/js/slick.min.js"></script>
+	<script src="/js/custom.js"></script>
+
+	<!-- Snackbar // documentation: https://www.polonel.com/snackbar/ -->
+	<script>
+		// Snackbar for user status switcher
+		$('#snackbar-user-status label').click(function () {
+			Snackbar.show({
+				text: 'Your status has been changed!',
+				pos: 'bottom-center',
+				showAction: false,
+				actionText: "Dismiss",
+				duration: 3000,
+				textColor: '#fff',
+				backgroundColor: '#383838'
+			});
+		}); 
+	</script>
+
+</body>
+
+</html>
